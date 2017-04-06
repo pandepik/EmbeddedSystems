@@ -1,0 +1,73 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; Delay.s
+    2 00000000         ; You must complete this file
+    3 00000000         ; 1. Complete the body of the delay routine by putting t
+                       he correct constant in R0
+    4 00000000         ; 2. Provide the correct EXPORT statement
+    5 00000000                 AREA             |.text|, CODE, READONLY, ALIGN=
+2
+    6 00000000                 THUMB
+    7 00000000                 EXPORT           Delay
+    8 00000000         ;; linkage: ;--UUU--Put correct EXPORT statement here --
+                       ---
+    9 00000000         
+   10 00000000         ;------------Delay------------
+   11 00000000         ; Delay for 62 ms
+   12 00000000         ; Input: none
+   13 00000000         ; Output: none
+   14 00000000         ; Modifies: R0
+   15 00000000         ;bus = 80MHz, 12.5ns
+   16 00000000         ;4 cycles in simulation, 3 on the real board
+   17 00000000 4801    Delay   LDR              R0,=0x12EBC0 ;0x193A55  ;--UUU-
+                                                            -  Put correct valu
+                                                            e here -----
+   18 00000002 3801    wait    SUBS             R0,#1       ;delay, 3 cycles/lo
+                                                            op
+   19 00000004 D1FD            BNE              wait
+   20 00000006 4770            BX               LR
+   21 00000008         
+   22 00000008                 ALIGN                        ; make sure the end
+                                                             of this section is
+                                                             aligned
+   23 00000008                 END                          ; end of file
+              0012EBC0 
+Command Line: --debug --xref --cpu=Cortex-M4 --apcs=interwork --depend=.\delay.
+d -o.\delay.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\
+Inc\Luminary --predefine="__EVAL SETA 1" --list=.\delay.lst Delay.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 5 in file Delay.s
+   Uses
+      None
+Comment: .text unused
+Delay 00000000
+
+Symbol: Delay
+   Definitions
+      At line 17 in file Delay.s
+   Uses
+      At line 7 in file Delay.s
+Comment: Delay used once
+wait 00000002
+
+Symbol: wait
+   Definitions
+      At line 18 in file Delay.s
+   Uses
+      At line 19 in file Delay.s
+Comment: wait used once
+3 symbols
+336 symbols in table
