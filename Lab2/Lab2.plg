@@ -1,0 +1,17 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\ramesh\Dropbox\School\StudyAbroad\2016\Summer2016\CourseDocuments\EE319KIndiawareMaker\MySetup\EE319KIndiaware\Lab2\Lab2.uvproj
+Project File Date:  06/03/2016
+
+<h2>Output:</h2>
+Rebuild target 'Lab2'
+assembling Startup.s...
+assembling Lab2.s...
+linking...
+Program Size: Code=648 RO-data=0 RW-data=0 ZI-data=1024  
+".\Lab2.axf" - 0 Errors, 0 Warning(s).
+Clean started: Project: 'Lab2'
+   deleting intermediate output files for target 'Lab2'
